@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int tam = 0,e=0,i, numAleatorio, numMaior=0, numMenor=0;
+	
+	printf("Qual o tamanho do vetor?\n");
+	scanf("%i",&tam);
+	
+	int vetor[tam];
+	
+	printf("\nEscolha entre Digitar ou Gerar o vetor:\n(1-Digitar) (2-Gerar)\n");
+	
+	
+	do{
+		if(e == 0){
+			scanf("%i",&e);
+		}else if(e != 1 && e != 2){
+			printf("\nOpcao Invalida!\nTente de novo\n");
+			printf("\nEscolha entre Digitar ou Gerar o vetor:\n(1-Digitar) (2-Gerar)\n");
+			scanf("%i",&e);
+		}
+	
+	}while(e != 1 && e != 2);
+	
+	if(e == 1){
+		printf("\n\nDigite os valores do novo vetor:\n\n");
+		for(i=0;i<tam;i++){
+			printf("[%d] = ",i);
+			scanf("%i",&vetor[i]);
+			numMaior=vetor[i];
+			numMenor=vetor[i];
+		}
+	}else if(e == 2){
+		printf("\n\nGerando os valores do vetor.\n\n");
+		for(i=0;i<tam;i++){
+			numAleatorio = rand() % 10;
+			printf("[%d] = %d\n",i,numAleatorio);
+			vetor[i] = numAleatorio;
+			numMaior=vetor[i];
+			numMenor=vetor[i];
+		}
+	}
+	
+		printf("\n\nO vetor contem os valores:\n\n");
+	
+	
+	for(i=0;i<tam;i++){
+		printf("[%d] = %d\n",i,vetor[i]);
+		if(vetor[i]<numMenor){
+			numMenor=vetor[i];
+		}if(vetor[i]>numMaior){
+			numMaior=vetor[i];
+		}
+			
+	}
+	
+		printf("\n\nO menor numero foi %d.",numMenor);
+	printf("\n\nO maior numero foi %d.",numMaior);
+		
+
+	
+	
+	
+   
+}
