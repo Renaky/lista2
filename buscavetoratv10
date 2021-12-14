@@ -1,0 +1,33 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+		
+	int tam = 0,e=0,i, numAleatorio, soma=0,valor,qtdvezes=0;
+
+	printf("insira o tamanho do vetor\n");
+	scanf("%d",&tam);	
+	int vetor[tam];
+	
+	printf("Qual valor voce quer buscar no vetor?\n");
+	scanf("%d",&valor);
+	
+	printf("\n\nInsira os valores do vetor:\n\n");
+	for(i=0;i<tam;i++){
+		printf("[%d] = ",i);
+		scanf("%i",&vetor[i]);
+	}
+
+	printf("\n\nO vetor possui os seguintes valores:\n\n");
+	
+	for(i=0;i<tam;i++){
+		printf("[%d] = %d\n",i,vetor[i]);
+		if(vetor[i] == valor){
+			qtdvezes++;
+		}
+	}
+	
+	printf("\n\nO numero %d apareceu %d vezes.",valor,qtdvezes);
+			
+    return 0;
+}
