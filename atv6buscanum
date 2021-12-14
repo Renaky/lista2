@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+	int tam = 0,i, numAleatorio, num,totalB=0;
+	float soma=0;
+	
+	printf("Insira o tamanho do vetor\n");
+	scanf("%i",&tam);
+	printf("\nQue numero voce deseja buscar no vetor?\n");
+	scanf("%d",&num);
+	
+	int vetor[tam],vetorB[tam],vetorPosicao[tam];
+	
+	printf("\n\nGerando os valores do vetor.\n\n");
+	for(i=0;i<tam;i++){
+		numAleatorio = rand() % 10;
+		printf("[%d] = %d\n",i,numAleatorio);
+		vetor[i] = numAleatorio;
+	}	
+		
+		printf("\n\nO vetor possui os seguintes valores:\n\n");
+	
+	for(i=0;i<tam;i++){
+		printf("[%d] = %d\n",i,vetor[i]);
+		if(vetor[i]==num){
+			vetorB[totalB] = vetor[i];
+			vetorPosicao[totalB]=i;
+			totalB++;
+		}
+			
+	}
+	
+	if(totalB == 1){
+		printf("\n\nForam encontrados %d numeros %d, ele estava na posicao:\n",totalB,num);
+	}else{
+		printf("\n\nForam encontrados %d numeros %d, ele estava na posicao:\n",totalB,num);
+	}
+	
+	for(i=0;i<totalB;i++){
+		printf("[%d] = %d\n",vetorPosicao[i],vetorB[i]);
+	}	
+    return 0;
+}
