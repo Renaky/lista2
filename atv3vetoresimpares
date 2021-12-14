@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <locale.h>
+int main(){
+	int tam = 0,e=0,i, numAleatorio, impar=0;
+	printf("Insira o tamanho do vetor: \n");
+	scanf("%i",&tam);
+	
+	int vetor[tam];
+	
+	printf("\nEscolha entre Inserir ou Gerar os numeros do vetor:\n(1-Inserir) (2-Gerar)\n");
+	
+	
+	do{
+		if(e == 0){
+			scanf("%i",&e);
+		}else if(e != 1 && e != 2){
+			printf("\nOpcao Invalida!");
+			printf("\nTente de novo\n");
+			printf("\nEscolha entre Inserir ou Gerar o valor do vetor:\n(1-Inserir) (2-Gerar)\n");
+			scanf("%i",&e);
+		}
+	
+	}while(e != 1 && e != 2);
+	
+	if(e == 1){
+		printf("\n\nInsira os numeros do vetor:\n\n");
+		for(i=0;i<tam;i++){
+			printf("[%d] = ",i);
+			scanf("%i",&vetor[i]);
+		}
+	}else if(e == 2){
+		printf("\n\nGerando os valores do vetor.\n\n");
+		for(i=0;i<tam;i++){
+			 numAleatorio = rand() % 10;
+			printf("[%d] = %d\n",i,numAleatorio);
+			vetor[i] = numAleatorio;
+		}
+	}	
+	printf("\n\nO vetor contem os seguintes valores:\n\n");
+	
+	
+	for(i=0;i<tam;i++){
+		printf("[%d] = %d\n",i,vetor[i]);
+		if(vetor[i]%2 != 0){
+			impar++;
+		}			
+	}
+	
+	printf("\n\nForam encontrado um total de %d numeros impares.",impar);
+	printf("\n\nNumeros impares:\n");
+	
+	for(i=0;i<tam;i++){
+		
+		if(vetor[i]%2 != 0){
+			printf("[%d] = %d\n",i,vetor[i]);
+		}
+			
+	}	
+	
+    return 0;
+}
